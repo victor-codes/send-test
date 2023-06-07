@@ -1,0 +1,173 @@
+.dsb {
+  display: grid;
+  grid-template-columns: repeat(24, 1fr);
+  height: 100%;
+
+  &-nav {
+    grid-column: 1/ 5;
+    padding: 2.4rem 0;
+
+    &-section {
+      margin-top: 2rem;
+      padding-bottom: 2rem;
+
+      &:last-of-type {
+        margin-top: 0rem;
+
+        > div {
+          border: none;
+        }
+      }
+
+      > div {
+        border-top: 0.1rem solid $oslo-gray;
+        margin-top: 2rem;
+        opacity: 0.1;
+        width: 75%;
+      }
+    }
+
+    &-title {
+      @extend %items-center;
+      padding-left: 2.4rem;
+      margin-bottom: 2.4rem;
+
+      > :first-child {
+        width: 11rem;
+        height: 2.4rem;
+        display: flex;
+        margin-right: 1.2rem;
+      }
+
+      > :last-child {
+        width: 2rem;
+        height: 2rem;
+      }
+
+      &--mini {
+        background-color: $athens-gray-3;
+        padding: 0.7rem 0.2rem 0.7rem 1.2rem;
+        border-radius: 0.4rem;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+
+        > :first-child {
+          width: 1rem;
+          margin-right: 0.4rem;
+          height: 1.4rem;
+        }
+      }
+    }
+  }
+
+  &-main {
+    background-color: $white;
+    grid-column: 5/25;
+    padding: 1.6rem 0;
+
+    &-search {
+      position: relative;
+      width: 26.2rem;
+      height: 4rem;
+      border-radius: 0.4rem;
+      box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+
+      input {
+        @extend %description-14;
+        padding: 1.2rem 1rem 1.2rem 1.6rem;
+        border: 0.1rem solid $athens-gray-2;
+        border-radius: 0.8rem;
+        width: 100%;
+        color: $raven;
+        height: 100%;
+        font-family: $font-camphorPro;
+
+        &::placeholder {
+          color: $raven;
+        }
+      }
+
+      svg {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+
+    &-action {
+      @extend %items-center;
+
+      > :not(:last-child) {
+        margin-right: 2.4rem;
+      }
+    }
+
+    &-btn {
+      @extend %title-14;
+      @extend %items-center;
+
+      padding: 0.8rem 1.6rem;
+      border-radius: 0.4rem;
+      border: none;
+      color: $white;
+      background-color: $cobalt;
+      line-height: 1;
+
+      svg {
+        width: 2.4rem;
+        height: 2.4rem;
+        margin-left: 0.8rem;
+      }
+    }
+
+    &-header {
+      padding: 0 3.2rem;
+      @extend %items-center;
+      justify-content: space-between;
+    }
+
+    &-title {
+      @extend %title-24;
+      color: $mine-shaft;
+    }
+
+    &-ftr {
+      margin-top: 2.4rem;
+      @extend %items-center;
+      padding-left: 3.2rem;
+
+      > :not(:last-child) {
+        margin-right: 1.2rem;
+      }
+
+      &-item {
+        padding: 0.6rem 1.2rem 0.8rem 1rem;
+        @extend %items-center;
+        @extend %title-14;
+        border-radius: 5rem;
+        border: 0.1rem dashed $dusty-gray;
+        background: none;
+        color: $dusty-gray;
+
+        svg {
+          width: 1.6rem;
+          height: 1.6rem;
+          margin-right: 0.4rem;
+        }
+      }
+    }
+  }
+
+  &--mini {
+    .dsb-nav {
+      grid-column: 1;
+    }
+
+    .dsb-main {
+      grid-column: 2 / span 25;
+    }
+  }
+}

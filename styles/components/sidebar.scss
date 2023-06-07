@@ -1,0 +1,72 @@
+.sbr {
+  &-link {
+    @extend %items-center;
+    padding: 0.8rem 1.6rem 0.8rem 2rem;
+    width: fit-content;
+
+    svg {
+      min-width: 2.4rem;
+      max-width: 2.4rem;
+      height: 2.4rem;
+    }
+
+    &-title {
+      @extend %description-14;
+      color: $rolling-stone;
+      margin-left: 0.8rem;
+    }
+
+    &--mini {
+      .sbr-link-title {
+        display: none;
+      }
+    }
+
+    &--active {
+      position: relative;
+      padding-left: 2.8rem;
+
+      .sbr-link-title {
+        color: $cobalt;
+      }
+
+      &::after,
+      &::before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        top: 0;
+        left: 0;
+        border-top-right-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+        box-shadow: 4px 0px 7px rgba(48, 48, 48, 0.1);
+        border-radius: 0px 3.23482px 3.23482px 0px;
+      }
+
+      &::before {
+        width: 0.4rem;
+        background-color: $cobalt;
+      }
+
+      &::after {
+        width: 2.8rem;
+        background: linear-gradient(
+          268.77deg,
+          rgba(255, 255, 255, 0.0001) -0.33%,
+          rgba(7, 70, 166, 0.49) 103.47%
+        );
+        opacity: 0.3;
+      }
+
+      svg > path {
+        fill: $cobalt;
+      }
+    }
+
+    &--icon {
+      .sbr-link-title {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+@import "./abstracts/_fonts.scss";
+@import "./base/_reset.scss";
+@import "./pages/index.scss";
+@import "./pages/shipment-detail.scss";
+@import "./components/sidebar.scss";
+@import "./components/shipmentTableItem.scss";
+@import "./components/shipmentTrackingItem.scss";
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  font-size: calc(100vw / 1440 * 10);
+  height: 100%;
+
+  max-width: 100vw;
+  overflow: hidden;
+  background-color: $catskill-white;
+}
+
+#__next {
+  height: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.wrapper {
+  font-weight: 500;
+  @include maxw(90rem);
+  margin: auto;
+}
+
+.scroller {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  pointer-events: none;
+  user-select: none;
+}
