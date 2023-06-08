@@ -10,9 +10,9 @@ const ChervonDownSvg = () => {
       <path
         d="M5.0004 8.22745L10.0004 13.2274L15.0004 8.22745"
         stroke="#0746A6"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

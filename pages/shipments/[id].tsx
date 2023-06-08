@@ -1,5 +1,5 @@
 import Layout from "@/components/Layout";
-import ShipmentTrackingItem from "@/components/shipmentTrackingItem";
+import ShipmentTrackingItem from "@/components/ShipmentTrackingItem";
 import ChervonLeftSvg from "@/public/assets/svgs/ChervonLeftSvg";
 import { CustomBgSvg } from "@/public/assets/svgs/CustomBgSvg";
 import { DateSvg } from "@/public/assets/svgs/DateSvg";

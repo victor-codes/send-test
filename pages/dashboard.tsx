@@ -3,7 +3,7 @@ import { shipmentTableData, shipmentTableHeaders } from "@/utils/shipments";
 import PlusSvg from "@/public/assets/svgs/sidebar/PlusSvg";
 import SearchSvg from "@/public/assets/svgs/sidebar/SearchSvg";
 import Layout from "@/components/Layout";
-import ShipmentTableItem from "@/components/shipmentTableItem";
+import ShipmentTableItem from "@/components/ShipmentTableItem";
 
 export default function Home() {
   return (

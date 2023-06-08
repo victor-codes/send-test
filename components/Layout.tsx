@@ -1,4 +1,4 @@
-import Sidebar from "@/components/sidebar";
+import Sidebar from "@/components/Sidebar";
 import { Inter } from "next/font/google";
 import cx from "classnames";
 import { LayoutProps } from "@/types/shipments";
