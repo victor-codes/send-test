@@ -42,8 +42,8 @@ export default function Home() {
                 </p>
               ))}
             </div>
-            {shipmentTableData.map((props, key) => (
-              <ShipmentTableItem key={key} {...props} />
+            {shipmentTableData.map((props, index) => (
+              <ShipmentTableItem key={index} {...props} />
             ))}
           </div>
         </div>

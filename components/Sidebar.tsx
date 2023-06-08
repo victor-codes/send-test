@@ -17,15 +17,15 @@ const Sidebar = ({ min }: SidebarProps) => {
         <ActiveLink isMin={min} icon={<DashboardSvg />} label="Dashboard" />
       </div>
       <div className="dsb-nav-section">
-        {sidebarShipments.map((props, key) => (
-          <ActiveLink key={key} isMin={min} {...props} />
+        {sidebarShipments.map((props, index) => (
+          <ActiveLink key={index} isMin={min} {...props} />
         ))}
         <div />
       </div>
 
       <div className="dsb-nav-section">
-        {sidebarFinanaces.map((props, key) => (
-          <ActiveLink key={key} isMin={min} {...props} />
+        {sidebarFinanaces.map((props, index) => (
+          <ActiveLink key={index} isMin={min} {...props} />
         ))}
         <div />
       </div>
