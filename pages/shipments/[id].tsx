@@ -74,11 +74,13 @@ const Index = () => {
               )}
             </div>
             <div className="sd-main-info-tag-container">
-              {[1, 2, 3].map((_, index) => (
-                <div key={index} className="sd-main-info-tag">
-                  PO #1234
-                </div>
-              ))}
+              {Array(3)
+                .fill(null)
+                .map((_, index) => (
+                  <div key={index} className="sd-main-info-tag">
+                    PO #1234
+                  </div>
+                ))}
             </div>
 
             <div className="sd-main-info-dtl">
@@ -156,11 +158,13 @@ const Index = () => {
                 )}
               </div>
               <div className="sd-main-srt-clr-container">
-                {[1, 2].map((_, index) => (
-                  <div key={index} className="sd-main-srt-clr">
-                    Import Clearance
-                  </div>
-                ))}
+                {Array(2)
+                  .fill(null)
+                  .map((_, index) => (
+                    <div key={index} className="sd-main-srt-clr">
+                      Import Clearance
+                    </div>
+                  ))}
               </div>
             </div>
           </section>
