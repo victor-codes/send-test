@@ -1,6 +1,7 @@
 import { ShipmentListMockDataType } from "@/types/shipments";
 import cx from "classnames";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const ShipmentTableItem = ({
   bl_number,
@@ -15,58 +16,103 @@ const ShipmentTableItem = ({
   tags,
   icon,
 }: ShipmentListMockDataType) => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+  }, []);
+
   return (
-    <Link href={`/shipments/${bl_number}`} className="sli">
-      <div className="sli-header">
-        <div className="sli-header-icon">{icon}</div>
-
-        <div className="sli-header-content">
-          <div>
-            <h3 className="sli-header-title">{bl_number}</h3>
-            <span>&#x2022;</span>
-            <p className="sli-header-desc">{title}</p>
-          </div>
-          <div className="sli-tag-container">
-            {tags.map((tag: string, key: number) => (
-              <div key={key} className="sli-tag">
-                <div>
-                  <p>{tag}</p>
-                </div>
+    <>
+      {isLoading ? (
+        <div className="sli-loading">
+          <div className="sli-loading-row">
+            <div>
+              <div className="round" />
+              <div className="header">
+                <div className="rectangle rectangle--long" />
+                <div className="rectangle rectangle--short" />
               </div>
-            ))}
+            </div>
+            <div>
+              <div className="header">
+                <div className="rectangle rectangle--long" />
+                <div className="rectangle rectangle--short" />
+              </div>
+            </div>
+            <div>
+              <div className="header">
+                <div className="rectangle rectangle--long" />
+                <div className="rectangle rectangle--short" />
+              </div>
+            </div>
+            <div>
+              <div className="rectangle rectangle--short" />
+            </div>
+            <div>
+              <div className="rectangle rectangle--short" />
+            </div>
+            <div>
+              <div className="rectangle rectangle--short" />
+            </div>
           </div>
         </div>
-      </div>
+      ) : (
+        <Link href={`/shipments/${bl_number}`} className="sli">
+          <div className="sli-header">
+            <div className="sli-header-icon">{icon}</div>
 
-      <div className="sli-origin">
-        <div className="sli-origin-adr">{origin}</div>
-        <div className="sli-origin-date">Created: {createdAt}</div>
-      </div>
+            <div className="sli-header-content">
+              <div>
+                <h3 className="sli-header-title">{bl_number}</h3>
+                <span>&#x2022;</span>
+                <p className="sli-header-desc">{title}</p>
+              </div>
+              <div className="sli-tag-container">
+                {tags.map((tag: string, key: number) => (
+                  <div key={key} className="sli-tag">
+                    <div>
+                      <p>{tag}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
 
-      <div className="sli-origin">
-        <div className="sli-origin-adr">{destination}</div>
-        <div className="sli-origin-date">ETA: {eta}</div>
-      </div>
+          <div className="sli-origin">
+            <div className="sli-origin-adr">{origin}</div>
+            <div className="sli-origin-date">Created: {createdAt}</div>
+          </div>
 
-      <div
-        className={cx(
-          "sli-status",
-          `sli-status--${status.toLocaleLowerCase()}`
-        )}
-      >
-        <div>
-          <span />
-          <p>{status}</p>
-        </div>
-      </div>
+          <div className="sli-origin">
+            <div className="sli-origin-adr">{destination}</div>
+            <div className="sli-origin-date">ETA: {eta}</div>
+          </div>
 
-      <div className="sli-volume">
-        <p>{volume}</p>
-      </div>
-      <div className="sli-volume">
-        <p>{carrier}</p>
-      </div>
-    </Link>
+          <div
+            className={cx(
+              "sli-status",
+              `sli-status--${status.toLocaleLowerCase()}`
+            )}
+          >
+            <div>
+              <span />
+              <p>{status}</p>
+            </div>
+          </div>
+
+          <div className="sli-volume">
+            <p>{volume}</p>
+          </div>
+          <div className="sli-volume">
+            <p>{carrier}</p>
+          </div>
+        </Link>
+      )}
+    </>
   );
 };
 

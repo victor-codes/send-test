@@ -213,3 +213,23 @@
     content: url(/assets/svgs/ButtonBg.svg);
   }
 }
+
+@mixin loadingSkeleton() {
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: $oslo-gray;
+    animation: skeleton 2s linear infinite alternate;
+  }
+
+  @keyframes skeleton {
+    from {
+      opacity: 0.2;
+    }
+    to {
+      opacity: 0.5;
+    }
+  }
+}
