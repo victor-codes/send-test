@@ -19,18 +19,23 @@ import {
 } from "@/utils/shipmentDetail";
 
 import cx from "classnames";
-import Link from "next/link";
+import { useRouter } from "next/router";
 
 const Index = () => {
+  const router = useRouter();
+
+  const handleBack = () => {
+    router.back();
+  };
   return (
     <Layout isSidebarMin={true}>
       <div className={cx("dsb-main", "sd")}>
         <div className="sd-main">
           <div className="sd-main-header">
-            <Link href="/shipments" className="sd-back">
+            <button className="sd-back" onClick={handleBack}>
               <ChervonLeftSvg />
               Go back
-            </Link>
+            </button>
             <div className="sd-main-header-title">
               <h2 className="dsb-main-title">Shipment SN-UCU26AAC</h2>
               <div className={cx("sli-status", `sli-status--completed`)}>

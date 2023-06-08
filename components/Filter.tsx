@@ -3,12 +3,10 @@ import { FilterProps } from "@/types/shipments";
 import { useState } from "react";
 
 const Filter = ({ label, options, updateFilter }: FilterProps) => {
-  const [filterKey, setFilterKey] = useState("");
-
   return (
     <div className="dsb-main-ftr-item">
       <PlusFilledSvg />
-      <select name={label} className="dsb-mainftr-item">
+      <select name={label} className="dsb-mainftr-item" onChange={updateFilter}>
         <option value="">{label}</option>
         {options && (
           <>

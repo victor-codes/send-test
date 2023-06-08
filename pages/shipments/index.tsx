@@ -9,7 +9,7 @@ import PlusSvg from "@/public/assets/svgs/sidebar/PlusSvg";
 import SearchSvg from "@/public/assets/svgs/sidebar/SearchSvg";
 import Layout from "@/components/Layout";
 import Filter from "@/components/Filter";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import ShipmentTableSkeletonLoader from "@/components/ShipmentTableSkeletonLoader";
 import { FilterOptions } from "@/types/shipments";
@@ -20,11 +20,15 @@ const Index = () => {
     createdAt: "",
   });
 
-  const handleFilter = (key: string, value: string) => {
-    setFilterBy((prevFilters) => ({
-      ...prevFilters,
-      [key]: value,
+  const handleFilter = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const { name, value } = event.target;
+
+    setFilterBy((prev) => ({
+      ...prev,
+      [name.toLocaleLowerCase()]: value.toLocaleLowerCase(),
     }));
+
+    console.log(filterBy);
   };
 
   const [isLoading, setIsLoading] = useState(true);
@@ -32,14 +36,14 @@ const Index = () => {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, 1500);
   }, []);
 
   const filteredData = shipmentTableData.filter((data) => {
     for (const key in filterBy) {
       if (
         filterBy[key as keyof FilterOptions] !== "" &&
-        data[key as keyof FilterOptions].toLowerCase() !==
+        data[key as keyof FilterOptions] !==
           filterBy[key as keyof FilterOptions]
       ) {
         return false;
