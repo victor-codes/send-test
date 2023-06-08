@@ -127,10 +127,20 @@ export const convertToPath = (str: string) => {
 };
 
 export const filterTypes: string[] = [
-  "Date",
-  "Status",
   "Trade Direction",
   "Commodity",
   "Forwarder",
   "Destination",
+];
+
+export const filterByList = [
+  {
+    label: "Date",
+    options: ["ASC", "DSC"],
+  },
+
+  {
+    label: "Status",
+    options: ["late", "current", "completed"],
+  },
 ];

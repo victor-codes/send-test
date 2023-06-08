@@ -16,3 +16,14 @@ export type LayoutProps = {
   children?: JSX.Element;
   isSidebarMin?: boolean;
 };
+
+export type FilterProps = {
+  label: string;
+  options?: string[];
+  updateFilter?: any;
+};
+
+export type FilterOptions = {
+  status: string;
+  createdAt: string;
+};

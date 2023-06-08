@@ -1,6 +1,6 @@
 import ShipmentTableItem from "@/components/ShipmentTableItem";
 import {
-  filterBy,
+  filterByList,
   filterTypes,
   shipmentTableData,
   shipmentTableHeaders,
@@ -12,12 +12,20 @@ import Filter from "@/components/Filter";
 import { useEffect, useState } from "react";
 import Head from "next/head";
 import ShipmentTableSkeletonLoader from "@/components/ShipmentTableSkeletonLoader";
+import { FilterOptions } from "@/types/shipments";
 
 const Index = () => {
-  const [filterBy, setFilterBy] = useState({
-    status: "current",
-    date: "",
+  const [filterBy, setFilterBy] = useState<FilterOptions>({
+    status: "",
+    createdAt: "",
   });
+
+  const handleFilter = (key: string, value: string) => {
+    setFilterBy((prevFilters) => ({
+      ...prevFilters,
+      [key]: value,
+    }));
+  };
 
   const [isLoading, setIsLoading] = useState(true);
 
@@ -29,13 +37,18 @@ const Index = () => {
 
   const filteredData = shipmentTableData.filter((data) => {
     for (const key in filterBy) {
-      if (filterBy[key] !== "" && data[key] !== filterBy[key]) {
-        return true;
+      if (
+        filterBy[key as keyof FilterOptions] !== "" &&
+        data[key as keyof FilterOptions].toLowerCase() !==
+          filterBy[key as keyof FilterOptions]
+      ) {
+        return false;
       }
-
-      return true;
     }
+
+    return true;
   });
+
   return (
     <>
       <Head>
@@ -61,9 +74,9 @@ const Index = () => {
             </div>
           </div>
           <div className="dsb-main-ftr">
-            {/* {filterBy.map((props, index: number) => (
-              <Filter key={index} {...props} />
-            ))} */}
+            {filterByList.map((props, index: number) => (
+              <Filter key={index} updateFilter={handleFilter} {...props} />
+            ))}
             {filterTypes.map((type, index: number) => (
               <Filter key={index} label={type} />
             ))}
@@ -81,9 +94,9 @@ const Index = () => {
               <>
                 {Array(5)
                   .fill(null)
-                  .map((_, index) => {
-                    <ShipmentTableSkeletonLoader key={index} />;
-                  })}
+                  .map((_, index) => (
+                    <ShipmentTableSkeletonLoader key={index} />
+                  ))}
               </>
             ) : (
               filteredData.map((props, index: number) => (
