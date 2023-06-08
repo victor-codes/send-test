@@ -1,7 +1,15 @@
 import Layout from "@/components/Layout";
+import Head from "next/head";
 
 const Index = () => {
-  return <Layout />;
+  return (
+    <>
+      <Head>
+        <title>Send</title>
+      </Head>
+      <Layout />
+    </>
+  );
 };
 
 export default Index;
