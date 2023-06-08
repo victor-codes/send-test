@@ -21,6 +21,7 @@ export type FilterProps = {
   label: string;
   options?: string[];
   updateFilter?: any;
+  isActive?: boolean;
 };
 
 export type FilterOptions = {

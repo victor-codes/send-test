@@ -7,21 +7,19 @@ const Filter = ({ label, options, updateFilter }: FilterProps) => {
 
   return (
     <div className="dsb-main-ftr-item">
-      <PlusFilledSvg /> {label}
-      {options && (
-        <div className="dsb-main-ftr-item-options">
-          {options.map((option) => (
-            <button
-              key={option}
-              onClick={() => {
-                // updateFilter(label, option);
-              }}
-            >
-              {option}
-            </button>
-          ))}
-        </div>
-      )}
+      <PlusFilledSvg />
+      <select name={label} className="dsb-mainftr-item">
+        <option value="">{label}</option>
+        {options && (
+          <>
+            {options.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </>
+        )}
+      </select>
     </div>
   );
 };

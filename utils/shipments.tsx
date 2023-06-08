@@ -144,3 +144,11 @@ export const filterByList = [
     options: ["late", "current", "completed"],
   },
 ];
+
+export const convertToShortcode = (dateString: string) => {
+  const date = new Date(dateString);
+  const month = date.toLocaleString("default", { month: "short" });
+  const day = date.getDate();
+
+  return `${month}-${day}`;
+};
