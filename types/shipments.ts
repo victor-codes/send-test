@@ -2,7 +2,7 @@ export type ShipmentListMockDataType = {
   bl_number: string;
   title: string;
   origin: string;
-  createdAt: string;
+  date: string;
   destination: string;
   eta: string;
   status: string;
@@ -26,5 +26,5 @@ export type FilterProps = {
 
 export type FilterOptions = {
   status: string;
-  createdAt: string;
+  date: string;
 };

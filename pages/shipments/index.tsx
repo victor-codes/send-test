@@ -17,7 +17,7 @@ import { FilterOptions } from "@/types/shipments";
 const Index = () => {
   const [filterBy, setFilterBy] = useState<FilterOptions>({
     status: "",
-    createdAt: "",
+    date: "",
   });
 
   const handleFilter = (event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -25,10 +25,8 @@ const Index = () => {
 
     setFilterBy((prev) => ({
       ...prev,
-      [name.toLocaleLowerCase()]: value.toLocaleLowerCase(),
+      [name.toLowerCase()]: value.toLowerCase(),
     }));
-
-    console.log(filterBy);
   };
 
   const [isLoading, setIsLoading] = useState(true);
@@ -40,17 +38,11 @@ const Index = () => {
   }, []);
 
   const filteredData = shipmentTableData.filter((data) => {
-    for (const key in filterBy) {
-      if (
-        filterBy[key as keyof FilterOptions] !== "" &&
-        data[key as keyof FilterOptions] !==
-          filterBy[key as keyof FilterOptions]
-      ) {
-        return false;
-      }
-    }
-
-    return true;
+    return (
+      (filterBy.date === "" ||
+        data.date.toLowerCase().includes(filterBy.date)) &&
+      (filterBy.status === "" || data.status.includes(filterBy.status))
+    );
   });
 
   return (

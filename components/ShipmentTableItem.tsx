@@ -1,13 +1,12 @@
 import { ShipmentListMockDataType } from "@/types/shipments";
 import cx from "classnames";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
 const ShipmentTableItem = ({
   bl_number,
   title,
   origin,
-  createdAt,
+  date,
   destination,
   eta,
   status,
@@ -41,7 +40,7 @@ const ShipmentTableItem = ({
 
       <div className="sli-origin">
         <div className="sli-origin-adr">{origin}</div>
-        <div className="sli-origin-date">Created: {createdAt}</div>
+        <div className="sli-origin-date">Created: {date}</div>
       </div>
 
       <div className="sli-origin">
