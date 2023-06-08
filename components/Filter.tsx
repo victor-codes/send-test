@@ -1,6 +1,5 @@
 import PlusFilledSvg from "@/public/assets/svgs/PlusFilledSvg";
 import { FilterProps } from "@/types/shipments";
-import { useState } from "react";
 
 const Filter = ({ label, options, updateFilter }: FilterProps) => {
   return (
