@@ -1,4 +1,4 @@
-export const PickupSvg = () => {
+const PickupSvg = () => {
   return (
     <svg
       width="16"
@@ -14,3 +14,5 @@ export const PickupSvg = () => {
     </svg>
   );
 };
+
+export default PickupSvg;

@@ -1,10 +1,10 @@
-import { ShippingModeSvg } from "@/public/assets/svgs/ShippingModeSvg";
-import { CustomSvg } from "@/public/assets/svgs/tracking/CustomSvg";
-import { LocationSvg } from "@/public/assets/svgs/tracking/LocationSvg";
-import { PickupSvg } from "@/public/assets/svgs/tracking/PickupSvg";
-import { PlaneSvg } from "@/public/assets/svgs/tracking/PlaneSvg";
-import { PortSvg } from "@/public/assets/svgs/tracking/PortSvg";
-import { WarehouseSvg } from "@/public/assets/svgs/tracking/WarehouseSvg";
+import ShippingModeSvg from "@/public/assets/svgs/ShippingModeSvg";
+import CustomSvg from "@/public/assets/svgs/tracking/CustomSvg";
+import LocationSvg from "@/public/assets/svgs/tracking/LocationSvg";
+import PickupSvg from "@/public/assets/svgs/tracking/PickupSvg";
+import PlaneSvg from "@/public/assets/svgs/tracking/PlaneSvg";
+import PortSvg from "@/public/assets/svgs/tracking/PortSvg";
+import WarehouseSvg from "@/public/assets/svgs/tracking/WarehouseSvg";
 import {
   ShipmentDetailInfoDetailsList,
   ShipmentDetailsInfoHeader,

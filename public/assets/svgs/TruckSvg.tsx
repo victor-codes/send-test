@@ -1,4 +1,4 @@
-export const TruckSvg = () => {
+const TruckSvg = () => {
   return (
     <svg
       width="20"
@@ -38,3 +38,5 @@ export const TruckSvg = () => {
     </svg>
   );
 };
+
+export default TruckSvg;

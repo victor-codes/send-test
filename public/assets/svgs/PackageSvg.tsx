@@ -1,4 +1,4 @@
-export const PackageSvg = () => {
+const PackageSvg = () => {
   return (
     <svg
       width="20"
@@ -34,3 +34,5 @@ export const PackageSvg = () => {
     </svg>
   );
 };
+
+export default PackageSvg;

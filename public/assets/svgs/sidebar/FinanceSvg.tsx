@@ -1,4 +1,4 @@
-export const FinanceSvg = () => {
+const FinanceSvg = () => {
   return (
     <div>
       <svg
@@ -16,3 +16,5 @@ export const FinanceSvg = () => {
     </div>
   );
 };
+
+export default FinanceSvg;

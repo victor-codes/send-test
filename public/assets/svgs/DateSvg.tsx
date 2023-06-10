@@ -1,4 +1,4 @@
-export const DateSvg = () => {
+const DateSvg = () => {
   return (
     <svg
       width="100%"
@@ -14,3 +14,5 @@ export const DateSvg = () => {
     </svg>
   );
 };
+
+export default DateSvg;

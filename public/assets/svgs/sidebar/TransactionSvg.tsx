@@ -1,4 +1,4 @@
-export const TransactionSvg = () => {
+const TransactionSvg = () => {
   return (
     <svg
       width="24"
@@ -23,3 +23,5 @@ export const TransactionSvg = () => {
     </svg>
   );
 };
+
+export default TransactionSvg;

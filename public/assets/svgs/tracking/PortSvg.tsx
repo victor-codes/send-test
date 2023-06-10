@@ -1,4 +1,4 @@
-export const PortSvg = () => {
+const PortSvg = () => {
   return (
     <svg
       width="12"
@@ -14,3 +14,5 @@ export const PortSvg = () => {
     </svg>
   );
 };
+
+export default PortSvg;

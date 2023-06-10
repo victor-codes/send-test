@@ -1,4 +1,4 @@
-export const WarehouseSvg = () => {
+const WarehouseSvg = () => {
   return (
     <svg
       width="15"
@@ -18,3 +18,5 @@ export const WarehouseSvg = () => {
     </svg>
   );
 };
+
+export default WarehouseSvg;

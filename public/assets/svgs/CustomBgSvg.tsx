@@ -1,4 +1,4 @@
-export const CustomBgSvg = () => {
+const CustomBgSvg = () => {
   return (
     <svg
       width="100%"
@@ -18,3 +18,5 @@ export const CustomBgSvg = () => {
     </svg>
   );
 };
+
+export default CustomBgSvg;

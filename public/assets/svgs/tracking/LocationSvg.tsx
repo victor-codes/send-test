@@ -1,4 +1,4 @@
-export const LocationSvg = () => {
+const LocationSvg = () => {
   return (
     <svg
       width="10"
@@ -18,3 +18,5 @@ export const LocationSvg = () => {
     </svg>
   );
 };
+
+export default LocationSvg;

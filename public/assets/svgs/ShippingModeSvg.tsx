@@ -1,4 +1,4 @@
-export const ShippingModeSvg = () => {
+const ShippingModeSvg = () => {
   return (
     <svg
       width="16"
@@ -14,3 +14,5 @@ export const ShippingModeSvg = () => {
     </svg>
   );
 };
+
+export default ShippingModeSvg;

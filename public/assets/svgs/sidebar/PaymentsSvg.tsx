@@ -1,4 +1,4 @@
-export const PaymentsSvg = () => {
+const PaymentsSvg = () => {
   return (
     <svg
       width="24"
@@ -17,3 +17,5 @@ export const PaymentsSvg = () => {
     </svg>
   );
 };
+
+export default PaymentsSvg;

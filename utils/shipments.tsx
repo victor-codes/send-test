@@ -1,8 +1,8 @@
-import { PackageSvg } from "@/public/assets/svgs/PackageSvg";
-import { PlaneSvg } from "@/public/assets/svgs/PlaneSvg";
-import { ShippingModeSvg } from "@/public/assets/svgs/ShippingModeSvg";
-import { TruckSvg } from "@/public/assets/svgs/TruckSvg";
-import { CustomSvg } from "@/public/assets/svgs/tracking/CustomSvg";
+import PackageSvg from "@/public/assets/svgs/PackageSvg";
+import PlaneSvg from "@/public/assets/svgs/PlaneSvg";
+import ShippingModeSvg from "@/public/assets/svgs/ShippingModeSvg";
+import TruckSvg from "@/public/assets/svgs/TruckSvg";
+import CustomSvg from "@/public/assets/svgs/tracking/CustomSvg";
 import { ShipmentListMockDataType } from "@/types/shipments";
 
 export const shipmentTableData: ShipmentListMockDataType[] = [
@@ -136,9 +136,21 @@ export const filterTypes: string[] = [
 export const filterByList = [
   {
     label: "Date",
-    options: ["jan", "feb", 'mar', 'apr', 'may', 'june', 'july', 'aug', 'sept', 'nov', 'dec' ],
+    options: [
+      "jan",
+      "feb",
+      "mar",
+      "apr",
+      "may",
+      "june",
+      "july",
+      "aug",
+      "sept",
+      "nov",
+      "dec",
+    ],
   },
-  
+
   {
     label: "Status",
     options: ["late", "current", "completed"],

@@ -1,4 +1,4 @@
-export const PlaneSvg = () => {
+const PlaneSvg = () => {
   return (
     <svg
       width="20"
@@ -14,3 +14,4 @@ export const PlaneSvg = () => {
     </svg>
   );
 };
+export default PlaneSvg;
