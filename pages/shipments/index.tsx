@@ -20,9 +20,7 @@ const Index = () => {
     date: "",
   });
 
-  const handleFilter = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const { name, value } = event.target;
-
+  const handleFilter = (name: string, value: string) => {
     setFilterBy((prev) => ({
       ...prev,
       [name.toLowerCase()]: value.toLowerCase(),
