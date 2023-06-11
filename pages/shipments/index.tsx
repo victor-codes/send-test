@@ -20,9 +20,7 @@ const Index = () => {
     date: "",
   });
 
-  const handleFilter = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const { name, value } = event.target;
-
+  const handleFilter = (name: string, value: string) => {
     setFilterBy((prev) => ({
       ...prev,
       [name.toLowerCase()]: value.toLowerCase(),
@@ -38,10 +36,12 @@ const Index = () => {
   }, []);
 
   const filteredData = shipmentTableData.filter((data) => {
-    return (
-      (filterBy.date === "" ||
-        data.date.toLowerCase().includes(filterBy.date)) &&
-      (filterBy.status === "" || data.status.includes(filterBy.status))
+    return Object.keys(filterBy).every(
+      (key) =>
+        filterBy[key as keyof FilterOptions] === "" ||
+        data[key as keyof FilterOptions]
+          .toLowerCase()
+          .includes(filterBy[key as keyof FilterOptions])
     );
   });
 

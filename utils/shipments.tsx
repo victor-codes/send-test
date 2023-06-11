@@ -146,6 +146,7 @@ export const filterByList = [
       "july",
       "aug",
       "sept",
+      "oct",
       "nov",
       "dec",
     ],
