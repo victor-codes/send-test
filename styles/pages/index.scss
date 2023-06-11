@@ -139,22 +139,78 @@
       @extend %items-center;
       padding-left: 3.2rem;
 
-      >:nth-child(2) {
-        max-width: 8.6rem;
-      }
-
       > :not(:last-child) {
         margin-right: 1.2rem;
       }
 
+      &-select {
+        color: $dusty-gray;
+        text-transform: capitalize;
+        appearance: none;
+        // box-shadow: ;
+        line-height: 1;
+        width: 100%;
+
+        &-dpwn {
+          display: none;
+          background: $white;
+          position: absolute;
+          z-index: 10;
+          width: max-content;
+          border: 0.1rem solid $dusty-gray;
+          border-radius: 0.8rem;
+          top: 4rem;
+          left: 0;
+          padding: 1.2rem;
+          animation: anim-reveal 300ms ease-out;
+
+          button {
+            color: $mine-shaft;
+            display: block;
+            width: 100%;
+            text-align: left;
+            text-transform: capitalize;
+            background: none;
+            border: none;
+
+            &:not(:first-child) {
+              margin-top: 1rem;
+            }
+          }
+
+          @keyframes anim-reveal {
+            from {
+              opacity: 0;
+            }
+
+            to {
+              opacity: 1;
+            }
+          }
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 3.2rem;
+          left: 0;
+          width: 100%;
+          height: 1rem;
+        }
+      }
+
       &-item {
-        position: relative;
-        padding: 0.6rem 1.2rem 0.8rem 1rem;
         @extend %items-center;
         @extend %title-14;
+        position: relative;
+        padding: 0.6rem 1.2rem 0.8rem 1rem;
         border-radius: 5rem;
         border: 0.1rem dashed $dusty-gray;
         background: none;
+
+        &:hover .dsb-main-ftr-select-dpwn {
+          display: block;
+        }
 
         select {
           border: none;
@@ -162,12 +218,13 @@
           text-transform: capitalize;
           appearance: none;
           background: none;
+          line-height: 1;
           width: 100%;
         }
 
         svg {
-          width: 1.6rem;
-          height: 1.6rem;
+          min-width: 1.6rem;
+          min-height: 1.6rem;
           margin-right: 0.4rem;
         }
       }
