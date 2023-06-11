@@ -79,8 +79,8 @@ const Index = () => {
           </div>
           <div>
             <div className="sli-table">
-              {shipmentTableHeaders.map((header: string) => (
-                <p key={header} className="sli-table-item">
+              {shipmentTableHeaders.map((header: string, index: number) => (
+                <p key={index} className="sli-table-item">
                   {header}
                 </p>
               ))}
@@ -94,6 +94,10 @@ const Index = () => {
                     <ShipmentTableSkeletonLoader key={index} />
                   ))}
               </>
+            ) : filteredData.length === 0 ? (
+              <div className="sli-nf">
+                <p> No shipments found</p>
+              </div>
             ) : (
               filteredData.map((props, index: number) => (
                 <ShipmentTableItem key={index} {...props} />

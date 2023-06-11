@@ -282,4 +282,13 @@
       }
     }
   }
+
+  &-nf {
+    margin-top: 15rem;
+
+    p {
+      @extend %title-20;
+      text-align: center;
+    }
+  }
 }
