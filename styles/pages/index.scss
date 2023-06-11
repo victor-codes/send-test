@@ -139,6 +139,10 @@
       @extend %items-center;
       padding-left: 3.2rem;
 
+      > :nth-child(2) {
+        max-width: 8.6rem;
+      }
+
       > :not(:last-child) {
         margin-right: 1.2rem;
       }
