@@ -36,10 +36,12 @@ const Index = () => {
   }, []);
 
   const filteredData = shipmentTableData.filter((data) => {
-    return (
-      (filterBy.date === "" ||
-        data.date.toLowerCase().includes(filterBy.date)) &&
-      (filterBy.status === "" || data.status.includes(filterBy.status))
+    return Object.keys(filterBy).every(
+      (key) =>
+        filterBy[key as keyof FilterOptions] === "" ||
+        data[key as keyof FilterOptions]
+          .toLowerCase()
+          .includes(filterBy[key as keyof FilterOptions])
     );
   });
 
